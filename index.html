@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - LearnHub</title>
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Flowbite -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body, button, input, select, textarea { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- ========== NAVBAR (same on every page) ========== -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="assets/images/logo.svg" class="h-8 w-8" alt="LearnHub logo" />
+        <span class="self-center text-2xl font-bold whitespace-nowrap text-slate-900">LearnHub</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-slate-500 rounded-lg md:hidden hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200" aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-slate-100 rounded-lg bg-slate-50 md:flex-row md:items-center md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+          <li><a href="index.html" class="block py-2 px-3 rounded hover:bg-slate-100 md:hover:bg-transparent md:p-0 text-blue-700 font-bold">Home</a></li>
+          <li><a href="src/pages/about.html" class="block py-2 px-3 rounded hover:bg-slate-100 md:hover:bg-transparent md:p-0 text-slate-900 md:hover:text-blue-700">About</a></li>
+          <li><a href="src/pages/contact.html" class="block py-2 px-3 rounded hover:bg-slate-100 md:hover:bg-transparent md:p-0 text-slate-900 md:hover:text-blue-700">Contact</a></li>
+          <li><a href="src/pages/signin.html" class="block py-2 px-3 rounded hover:bg-slate-100 md:hover:bg-transparent md:p-0 text-slate-900 md:hover:text-blue-700">Sign In</a></li>
+          <li><a href="src/pages/signup.html" class="block py-2 px-4 text-white bg-blue-700 rounded-lg hover:bg-blue-800 text-center">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+
+    <!-- ===== HERO SECTION (Tailwind / Flowbite hero) ===== -->
+    <section class="bg-white border-b border-slate-200">
+      <div class="grid max-w-screen-xl px-4 py-12 mx-auto gap-10 lg:py-20 lg:grid-cols-12 items-center">
+        <div class="lg:col-span-7">
+          <a href="src/pages/about.html" class="inline-flex items-center py-1 px-1 pe-4 mb-6 text-sm text-blue-800 bg-blue-100 rounded-full hover:bg-blue-200">
+            <span class="text-xs bg-blue-700 rounded-full text-white px-3 py-1 me-3">New</span>
+            <span class="font-medium">Fall 2026 courses are open</span>
+          </a>
+          <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-tight text-slate-900 md:text-5xl xl:text-6xl">Learn a job-ready skill in 8 weeks</h1>
+          <p class="max-w-xl mb-8 text-lg text-slate-500">Short courses in web design, Python and digital marketing. Watch a lesson, do the practice task, and get feedback from a real mentor.</p>
+          <div class="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+            <a href="src/pages/signup.html" class="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Start learning free</a>
+            <a href="src/pages/about.html" class="inline-flex justify-center items-center py-3 px-6 text-base font-medium text-slate-900 rounded-lg border border-slate-300 hover:bg-slate-100 focus:ring-4 focus:ring-slate-100">See how it works</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <!-- progress card (Flowbite card + progress bars) -->
+          <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-sm">
+            <div class="flex items-center justify-between mb-5">
+              <div><p class="text-sm text-slate-500">Your course</p><h3 class="text-lg font-bold text-slate-900">Web Design Basics</h3></div>
+              <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">In progress</span>
+            </div>
+            <div class="mb-4"><div class="flex justify-between mb-1 text-sm font-medium"><span>HTML</span><span>80%</span></div><div class="w-full bg-slate-200 rounded-full h-2.5"><div class="bg-blue-700 h-2.5 rounded-full" style="width:80%"></div></div></div>
+            <div class="mb-4"><div class="flex justify-between mb-1 text-sm font-medium"><span>CSS</span><span>55%</span></div><div class="w-full bg-slate-200 rounded-full h-2.5"><div class="bg-blue-700 h-2.5 rounded-full" style="width:55%"></div></div></div>
+            <div class="mb-6"><div class="flex justify-between mb-1 text-sm font-medium"><span>Tailwind</span><span>30%</span></div><div class="w-full bg-slate-200 rounded-full h-2.5"><div class="bg-blue-700 h-2.5 rounded-full" style="width:30%"></div></div></div>
+            <div class="flex items-center justify-between pt-4 border-t border-slate-200">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-blue-600 border-2 border-white text-white text-xs font-bold flex items-center justify-center">AK</div>
+                <div class="w-8 h-8 rounded-full bg-emerald-600 border-2 border-white text-white text-xs font-bold flex items-center justify-center">SM</div>
+                <div class="w-8 h-8 rounded-full bg-amber-500 border-2 border-white text-white text-xs font-bold flex items-center justify-center">HA</div>
+              </div>
+              <span class="text-sm text-slate-500">Next lesson: Flexbox</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 1: Feature cards -->
+    <section class="bg-white py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">Everything you need to learn well</h2>
+          <p class="text-slate-500">Every course is built around short lessons and real practice.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
+              <svg class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-slate-900">Short lessons</h3>
+            <p class="text-slate-500">Each lesson takes 10 minutes or less, so you can finish one between classes.</p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
+              <svg class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-slate-900">Learn any time</h3>
+            <p class="text-slate-500">Lessons stay available 24/7. Pause on a busy week and pick up where you left off.</p>
+          </div>
+          <div class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <div class="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 rounded-full">
+              <svg class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-slate-900">Certificates</h3>
+            <p class="text-slate-500">Finish a course and download a certificate you can add to your CV.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 2: Statistics -->
+    <section class="bg-slate-50 py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">Learners are already on board</h2>
+          <p class="text-slate-500">Numbers from our first three years.</p>
+        </div>
+        <dl class="grid max-w-screen-md gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-4 text-center"><div class="flex flex-col items-center justify-center"><dt class="mb-1 text-4xl font-extrabold text-slate-900">50K+</dt><dd class="text-slate-500">Active learners</dd></div><div class="flex flex-col items-center justify-center"><dt class="mb-1 text-4xl font-extrabold text-slate-900">120</dt><dd class="text-slate-500">Short courses</dd></div><div class="flex flex-col items-center justify-center"><dt class="mb-1 text-4xl font-extrabold text-slate-900">4.8/5</dt><dd class="text-slate-500">Average rating</dd></div><div class="flex flex-col items-center justify-center"><dt class="mb-1 text-4xl font-extrabold text-slate-900">35</dt><dd class="text-slate-500">Expert mentors</dd></div></dl>
+      </div>
+    </section>
+
+    <!-- COMPONENT 3: Course cards -->
+    <section class="bg-white py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">Popular courses</h2>
+          <p class="text-slate-500">Pick a course and start with the first free lesson.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-blue-500 to-indigo-700 flex items-end p-4">
+              <span class="bg-white text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Beginner</span>
+            </div>
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="mb-2 text-xl font-bold text-slate-900">Web Design Basics</h3>
+              <p class="mb-4 text-slate-500 flex-grow">Build responsive pages with HTML, CSS and Tailwind.</p>
+              <p class="mb-4 text-sm text-slate-400">8 weeks &middot; 32 lessons</p>
+              <a href="src/pages/signup.html" class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Enroll now</a>
+            </div>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-emerald-500 to-teal-700 flex items-end p-4">
+              <span class="bg-white text-emerald-800 text-xs font-semibold px-2.5 py-0.5 rounded">Beginner</span>
+            </div>
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="mb-2 text-xl font-bold text-slate-900">Python for Everyone</h3>
+              <p class="mb-4 text-slate-500 flex-grow">Learn variables, loops and functions by solving small problems.</p>
+              <p class="mb-4 text-sm text-slate-400">6 weeks &middot; 28 lessons</p>
+              <a href="src/pages/signup.html" class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Enroll now</a>
+            </div>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden flex flex-col">
+            <div class="h-36 bg-gradient-to-br from-amber-500 to-orange-600 flex items-end p-4">
+              <span class="bg-white text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded">Intermediate</span>
+            </div>
+            <div class="p-5 flex flex-col flex-grow">
+              <h3 class="mb-2 text-xl font-bold text-slate-900">Digital Marketing</h3>
+              <p class="mb-4 text-slate-500 flex-grow">Plan a campaign, write ads and read the analytics.</p>
+              <p class="mb-4 text-sm text-slate-400">5 weeks &middot; 20 lessons</p>
+              <a href="src/pages/signup.html" class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Enroll now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 4: How it works (steps) -->
+    <section class="bg-slate-50 py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">How it works</h2>
+          <p class="text-slate-500">Four steps from sign-up to certificate.</p>
+        </div>
+        <ol class="grid gap-6 md:grid-cols-4"><li class="p-6 bg-white border border-slate-200 rounded-lg"><div class="flex items-center justify-center w-9 h-9 mb-3 rounded-full bg-blue-700 text-white font-bold">1</div><h3 class="mb-1 text-lg font-bold text-slate-900">Create an account</h3><p class="text-slate-500 text-sm">Sign up with your email. It takes about a minute.</p></li><li class="p-6 bg-white border border-slate-200 rounded-lg"><div class="flex items-center justify-center w-9 h-9 mb-3 rounded-full bg-blue-700 text-white font-bold">2</div><h3 class="mb-1 text-lg font-bold text-slate-900">Choose a course</h3><p class="text-slate-500 text-sm">Start with the free first lesson and see if it fits you.</p></li><li class="p-6 bg-white border border-slate-200 rounded-lg"><div class="flex items-center justify-center w-9 h-9 mb-3 rounded-full bg-blue-700 text-white font-bold">3</div><h3 class="mb-1 text-lg font-bold text-slate-900">Practice every week</h3><p class="text-slate-500 text-sm">Finish the task after each lesson and get mentor feedback.</p></li><li class="p-6 bg-white border border-slate-200 rounded-lg"><div class="flex items-center justify-center w-9 h-9 mb-3 rounded-full bg-blue-700 text-white font-bold">4</div><h3 class="mb-1 text-lg font-bold text-slate-900">Get your certificate</h3><p class="text-slate-500 text-sm">Complete the final project and download your certificate.</p></li></ol>
+      </div>
+    </section>
+
+    <!-- COMPONENT 5: Testimonials -->
+    <section class="bg-white py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">What our learners say</h2>
+          <p class="text-slate-500">Real feedback from people who finished a course.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <figure class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col">
+            <div class="text-amber-400 text-lg mb-3" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="text-slate-700 mb-5 flex-grow">&ldquo;I had never written code before. After 8 weeks I built my own portfolio site.&rdquo;</blockquote>
+            <figcaption class="flex items-center space-x-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white font-bold text-sm">AK</div>
+              <div><div class="font-semibold text-slate-900">Ayesha Khan</div><div class="text-sm text-slate-500">Web Design student</div></div>
+            </figcaption>
+          </figure>
+          <figure class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col">
+            <div class="text-amber-400 text-lg mb-3" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="text-slate-700 mb-5 flex-grow">&ldquo;The lessons are short and the mentor replied to my questions the same day.&rdquo;</blockquote>
+            <figcaption class="flex items-center space-x-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-600 text-white font-bold text-sm">HA</div>
+              <div><div class="font-semibold text-slate-900">Hamza Ahmed</div><div class="text-sm text-slate-500">Python student</div></div>
+            </figcaption>
+          </figure>
+          <figure class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col">
+            <div class="text-amber-400 text-lg mb-3" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="text-slate-700 mb-5 flex-grow">&ldquo;I ran a real campaign for my family business using what I learned here.&rdquo;</blockquote>
+            <figcaption class="flex items-center space-x-3">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-amber-500 text-white font-bold text-sm">SM</div>
+              <div><div class="font-semibold text-slate-900">Sara Malik</div><div class="text-sm text-slate-500">Marketing student</div></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 6: Pricing cards -->
+    <section class="bg-slate-50 py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">Simple pricing</h2>
+          <p class="text-slate-500">Start free. Upgrade only when you need more.</p>
+        </div>
+        <div class="grid gap-6 max-w-screen-lg mx-auto lg:grid-cols-3">
+          <div class="flex flex-col p-6 bg-white rounded-lg border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-2"><h3 class="text-2xl font-semibold text-slate-900">Free</h3></div>
+            <p class="text-slate-500 text-sm">Try the platform and the first lesson of every course.</p>
+            <div class="flex items-baseline my-6"><span class="mr-2 text-4xl font-extrabold text-slate-900">$0</span><span class="text-slate-500">/month</span></div>
+            <ul class="mb-8 space-y-3 text-slate-600 text-sm flex-grow"><li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>First lesson of every course</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Community forum</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Progress tracking</span></li></ul>
+            <a href="src/pages/signup.html" class="inline-flex justify-center px-5 py-2.5 text-sm font-medium rounded-lg focus:ring-4 text-slate-900 bg-white border border-slate-300 hover:bg-slate-100 focus:ring-slate-200">Choose Free</a>
+          </div>
+          <div class="flex flex-col p-6 bg-white rounded-lg border-2 border-blue-600 shadow-lg">
+            <div class="flex items-center justify-between mb-2"><h3 class="text-2xl font-semibold text-slate-900">Pro</h3><span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Most popular</span></div>
+            <p class="text-slate-500 text-sm">For learners who want certificates and feedback.</p>
+            <div class="flex items-baseline my-6"><span class="mr-2 text-4xl font-extrabold text-slate-900">$9</span><span class="text-slate-500">/month</span></div>
+            <ul class="mb-8 space-y-3 text-slate-600 text-sm flex-grow"><li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>All courses</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Mentor feedback</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Downloadable certificates</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Practice projects</span></li></ul>
+            <a href="src/pages/signup.html" class="inline-flex justify-center px-5 py-2.5 text-sm font-medium rounded-lg focus:ring-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300">Choose Pro</a>
+          </div>
+          <div class="flex flex-col p-6 bg-white rounded-lg border border-slate-200 shadow-sm">
+            <div class="flex items-center justify-between mb-2"><h3 class="text-2xl font-semibold text-slate-900">Team</h3></div>
+            <p class="text-slate-500 text-sm">For classes and small groups.</p>
+            <div class="flex items-baseline my-6"><span class="mr-2 text-4xl font-extrabold text-slate-900">$29</span><span class="text-slate-500">/month</span></div>
+            <ul class="mb-8 space-y-3 text-slate-600 text-sm flex-grow"><li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Up to 10 learners</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Progress reports</span></li>
+<li class="flex items-center space-x-2"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span>Priority support</span></li></ul>
+            <a href="src/pages/signup.html" class="inline-flex justify-center px-5 py-2.5 text-sm font-medium rounded-lg focus:ring-4 text-slate-900 bg-white border border-slate-300 hover:bg-slate-100 focus:ring-slate-200">Choose Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 7: FAQ accordion -->
+    <section class="bg-white py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">Frequently asked questions</h2>
+          <p class="text-slate-500">Can't find your answer? Use the Contact page.</p>
+        </div>
+        <div class="max-w-3xl mx-auto"><div id="home-faq-accordion" data-accordion="collapse">
+  <h3 id="home-faq-head-1">
+    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-slate-800 bg-white border border-b-0 border-slate-200 rounded-t-xl hover:bg-slate-50 gap-3" data-accordion-target="#home-faq-body-1" aria-expanded="true" aria-controls="home-faq-body-1">
+      <span>Do I need any experience?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/></svg>
+    </button>
+  </h3>
+  <div id="home-faq-body-1" class="hidden" aria-labelledby="home-faq-head-1">
+    <div class="p-5 bg-white border border-b-0 border-slate-200"><p class="text-slate-600">No. Beginner courses start from zero and explain every step.</p></div>
+  </div>
+  <h3 id="home-faq-head-2">
+    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-slate-800 bg-white border border-b-0 border-slate-200 hover:bg-slate-50 gap-3" data-accordion-target="#home-faq-body-2" aria-expanded="false" aria-controls="home-faq-body-2">
+      <span>Can I use LearnHub on my phone?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/></svg>
+    </button>
+  </h3>
+  <div id="home-faq-body-2" class="hidden" aria-labelledby="home-faq-head-2">
+    <div class="p-5 bg-white border border-b-0 border-slate-200"><p class="text-slate-600">Yes. The site works on phones, tablets and laptops.</p></div>
+  </div>
+  <h3 id="home-faq-head-3">
+    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-slate-800 bg-white border border-b-0 border-slate-200 hover:bg-slate-50 gap-3" data-accordion-target="#home-faq-body-3" aria-expanded="false" aria-controls="home-faq-body-3">
+      <span>Is there a free trial?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/></svg>
+    </button>
+  </h3>
+  <div id="home-faq-body-3" class="hidden" aria-labelledby="home-faq-head-3">
+    <div class="p-5 bg-white border border-b-0 border-slate-200"><p class="text-slate-600">The Free plan gives you the first lesson of every course, with no card needed.</p></div>
+  </div>
+  <h3 id="home-faq-head-4">
+    <button type="button" class="flex items-center justify-between w-full p-5 font-semibold text-left text-slate-800 bg-white border border-slate-200 hover:bg-slate-50 gap-3" data-accordion-target="#home-faq-body-4" aria-expanded="false" aria-controls="home-faq-body-4">
+      <span>Will I get a certificate?</span>
+      <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/></svg>
+    </button>
+  </h3>
+  <div id="home-faq-body-4" class="hidden" aria-labelledby="home-faq-head-4">
+    <div class="p-5 bg-white border border-slate-200"><p class="text-slate-600">Yes. Pro learners can download a certificate after the final project.</p></div>
+  </div>
+</div></div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 8: Partner logos -->
+    <section class="bg-white py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">Our learners work at</h2>
+          <p class="text-slate-500">Graduates now work at these companies.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4 max-w-screen-md mx-auto"><div class="flex items-center justify-center h-16 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 font-bold">Systems Ltd</div><div class="flex items-center justify-center h-16 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 font-bold">Arbisoft</div><div class="flex items-center justify-center h-16 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 font-bold">Netsol</div><div class="flex items-center justify-center h-16 rounded-lg border border-slate-200 bg-slate-50 text-slate-500 font-bold">10Pearls</div></div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 9: Blog / article cards -->
+    <section class="bg-slate-50 py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center mb-10">
+          <h2 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900">From the blog</h2>
+          <p class="text-slate-500">Study tips and career advice.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <div class="flex justify-between items-center mb-4 text-slate-500">
+              <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Study tips</span>
+              <span class="text-sm">Sep 12, 2026</span>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-slate-900">How to finish a course you started</h3>
+            <p class="mb-4 text-slate-500">Three small habits that keep you going past week two.</p>
+            <a href="src/pages/about.html" class="font-medium text-blue-700 hover:underline">Read more</a>
+          </article>
+          <article class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <div class="flex justify-between items-center mb-4 text-slate-500">
+              <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Career</span>
+              <span class="text-sm">Sep 5, 2026</span>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-slate-900">Build a portfolio in one weekend</h3>
+            <p class="mb-4 text-slate-500">What to include and what to leave out.</p>
+            <a href="src/pages/about.html" class="font-medium text-blue-700 hover:underline">Read more</a>
+          </article>
+          <article class="p-6 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <div class="flex justify-between items-center mb-4 text-slate-500">
+              <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Coding</span>
+              <span class="text-sm">Aug 28, 2026</span>
+            </div>
+            <h3 class="mb-2 text-xl font-bold text-slate-900">Tailwind or plain CSS?</h3>
+            <p class="mb-4 text-slate-500">When utility classes help and when they get in the way.</p>
+            <a href="src/pages/about.html" class="font-medium text-blue-700 hover:underline">Read more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 10: Call-to-action banner -->
+    <section class="bg-white py-14">
+      <div class="max-w-screen-xl mx-auto px-4">
+        <div class="px-6 py-12 text-center bg-blue-700 rounded-2xl">
+          <h2 class="mb-3 text-3xl font-extrabold text-white">Your first lesson is free</h2>
+          <p class="max-w-xl mx-auto mb-6 text-blue-100">Make an account and start today. No card needed.</p>
+          <a href="src/pages/signup.html" class="inline-flex items-center px-6 py-3 text-base font-medium text-blue-800 bg-white rounded-lg hover:bg-blue-50 focus:ring-4 focus:ring-blue-300">Create free account</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 11: Newsletter subscribe box -->
+    <section class="bg-slate-50 py-14">
+      <div class="max-w-screen-xl mx-auto px-4 text-center">
+        <h2 class="mb-2 text-2xl font-extrabold text-slate-900">Get one study tip every week</h2>
+        <p class="mb-6 text-slate-500">One short email on Fridays. Unsubscribe any time.</p>
+        <form id="news-form" class="flex flex-col gap-3 max-w-md mx-auto sm:flex-row" novalidate>
+          <label for="news-email" class="sr-only">Email address</label>
+          <input type="email" id="news-email" placeholder="you@example.com" class="bg-white border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+          <button type="submit" class="px-5 py-2.5 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">Subscribe</button>
+        </form>
+        <p id="news-msg" class="hidden mt-3 text-sm"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER (same on every page) ========== -->
+  <footer class="bg-white border-t border-slate-200 mt-16">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-8 lg:py-10">
+      <div class="md:flex md:justify-between">
+        <div class="mb-8 md:mb-0">
+          <a href="index.html" class="flex items-center space-x-2">
+            <img src="assets/images/logo.svg" class="h-8 w-8" alt="LearnHub logo" />
+            <span class="self-center text-2xl font-bold whitespace-nowrap text-slate-900">LearnHub</span>
+          </a>
+          <p class="mt-3 max-w-xs text-sm text-slate-500">Short, practical courses in web design, coding and digital skills. Learn at your own pace.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-8 sm:gap-10 sm:grid-cols-3">
+          <div>
+            <h2 class="mb-4 text-sm font-semibold text-slate-900">Explore</h2>
+            <ul class="text-slate-500 font-medium space-y-3 text-sm">
+              <li><a href="index.html" class="hover:text-blue-700">Home</a></li>
+              <li><a href="src/pages/about.html" class="hover:text-blue-700">About</a></li>
+              <li><a href="src/pages/contact.html" class="hover:text-blue-700">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-4 text-sm font-semibold text-slate-900">Account</h2>
+            <ul class="text-slate-500 font-medium space-y-3 text-sm">
+              <li><a href="src/pages/signin.html" class="hover:text-blue-700">Sign In</a></li>
+              <li><a href="src/pages/signup.html" class="hover:text-blue-700">Sign Up</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-4 text-sm font-semibold text-slate-900">Legal</h2>
+            <ul class="text-slate-500 font-medium space-y-3 text-sm">
+              <li><a href="#" class="hover:text-blue-700">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-blue-700">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="my-6 border-slate-200 sm:mx-auto lg:my-8" />
+      <p class="text-sm text-slate-500 text-center">&copy; 2026 LearnHub. Made for Web Engineering Assignment 01, BSCS Fall 2026.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <script>
+
+    document.getElementById('news-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = document.getElementById('news-email').value.trim();
+      var msg = document.getElementById('news-msg');
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      msg.classList.remove('hidden', 'text-red-600', 'text-green-700');
+      msg.classList.add(ok ? 'text-green-700' : 'text-red-600');
+      msg.textContent = ok ? 'Thanks! You are subscribed.' : 'Please enter a valid email address.';
+      if (ok) e.target.reset();
+    });
+  </script>
+</body>
+</html>
